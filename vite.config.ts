@@ -1,10 +1,15 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { visualizer } from 'rollup-plugin-visualizer';
-
+import { fileURLToPath, URL } from 'node:url';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), visualizer({ open: true, gzipSize: true })],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {
@@ -16,7 +21,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['vue', 'pinia', 'vue-router', 'axios', 'element-plus', 'vue-i18n', 'vant'],
+          vendor: ['vue', 'pinia', 'vue-router', 'vue-i18n'],
+          // axios: ['axios'],
+          // element: ['element-plus'],
+          // vant: ['vant'],
         },
         chunkFileNames: 'static/js/[name]-[hash].js',
         entryFileNames: 'static/js/[name]-[hash].js',
