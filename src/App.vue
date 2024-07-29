@@ -1,18 +1,22 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
-import { ElSwitch } from 'element-plus';
 import { ref } from 'vue';
-const theme = ref<boolean>(true);
-const themeChange = (val: boolean) => {
-  console.log('themeChange', val);
+const theme = ref<boolean>(false);
+const themeChange = ($event: Event, val = theme) => {
+  console.log('themeChange', val.value, $event);
   // true白天 false夜晚
-  if (val) {
+  if (val.value) {
     document.querySelectorAll('html')[0].setAttribute('theme-colors', 'light');
   } else {
     document.querySelectorAll('html')[0].setAttribute('theme-colors', 'dark');
   }
+  val.value = !val.value;
 };
-themeChange(theme.value);
+
+// import { ElSwitch } from 'element-plus';
+// import { useDark, useToggle } from '@vueuse/core';
+// const isDark = useDark();
+// const toggleDark = useToggle(isDark);
 </script>
 
 <template>
@@ -26,15 +30,15 @@ themeChange(theme.value);
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <el-switch
-    v-model="theme"
+  <!-- <el-switch
+    v-model="isDark"
     inline-prompt
-    style="--el-switch-on-color: #13ce66; --el-switch-off-color: #97a0ff"
-    :active-icon="Sunny"
-    :inactive-icon="Moon"
-    @change="themeChange"
-  />
-  <button @click="themeChange(!theme)">{{ theme }}</button>
+    active-text="dark"
+    size="large"
+    inactive-text="light"
+    @change="toggleDark(isDark)"
+  /> -->
+  <button @click="themeChange">{{ theme }}</button>
 </template>
 
 <style scoped>
