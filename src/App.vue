@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
+import { ElSwitch } from 'element-plus';
+import { ref } from 'vue';
+const theme = ref<boolean>(true);
+const themeChange = (val: boolean) => {
+  console.log('themeChange', val);
+  // true白天 false夜晚
+  if (val) {
+    document.querySelectorAll('html')[0].setAttribute('theme-colors', 'light');
+  } else {
+    document.querySelectorAll('html')[0].setAttribute('theme-colors', 'dark');
+  }
+};
+themeChange(theme.value);
 </script>
 
 <template>
@@ -13,6 +26,15 @@ import HelloWorld from './components/HelloWorld.vue';
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <el-switch
+    v-model="theme"
+    inline-prompt
+    style="--el-switch-on-color: #13ce66; --el-switch-off-color: #97a0ff"
+    :active-icon="Sunny"
+    :inactive-icon="Moon"
+    @change="themeChange"
+  />
+  <button @click="themeChange(!theme)">{{ theme }}</button>
 </template>
 
 <style scoped>

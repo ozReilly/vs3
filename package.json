@@ -10,6 +10,7 @@
     "lint": "eslint src --fix --ext .vue,.js,.ts --max-warnings 0"
   },
   "dependencies": {
+    "@vueuse/core": "^10.11.0",
     "axios": "^1.7.2",
     "element-plus": "^2.7.8",
     "pinia": "^2.2.0",
