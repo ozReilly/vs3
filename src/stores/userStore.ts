@@ -41,4 +41,15 @@ export const useUserStore = defineStore('user', {
       this.token = token
     },
   },
+  persist:{
+    storage:localStorage,
+    beforeRestore: (ctx) => {
+      console.log(`即将恢复 '${ctx.store.$id}'`)
+      console.log(ctx.store.$state)
+    },
+    afterRestore: (ctx) => {
+      console.log(`刚刚恢复完 '${ctx.store.$id}'`)
+    },
+    // paths:['userInfo']
+  }
 })
