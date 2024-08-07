@@ -10,7 +10,16 @@
     "plugin:vue/vue3-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
+    "vue-global-api",
+    "vue-global-api/compostion-api",
+    "vue-global-api/ref",
+    "vue-global-api/watch",
+    "vue-global-api/computed", 
+    "vue-global-api/onMounted",
+    "vue-global-api/onUnMounted",
+    "axios"
+
   ],
   "parserOptions": {
     "ecmaVersion": "latest",

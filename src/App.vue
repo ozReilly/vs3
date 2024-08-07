@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
-import { ref, computed } from 'vue';
 import { useUserStore } from '@/stores';
 import { UserInfo } from '@/stores/userStore';
 const theme = ref<boolean>(false);
@@ -15,10 +14,10 @@ const themeChange = ($event: Event, val = theme) => {
   val.value = !val.value;
 };
 
-// import { ElSwitch } from 'element-plus';
-// import { useDark, useToggle } from '@vueuse/core';
-// const isDark = useDark();
-// const toggleDark = useToggle(isDark);
+// import { ElSwitch, ElButton } from 'element-plus';
+import { useDark, useToggle } from '@vueuse/core';
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 const userStore = useUserStore();
 console.log('userStore', userStore);
 const accountLogin = ($event: Event) => {
@@ -61,8 +60,6 @@ const accountLogin = ($event: Event) => {
     channelUser: '',
     hdpType: 0,
     hdpStyle: 0,
-    domain:
-      '2NrtnPLjFhq4DEXbSzqD3aKjb5gocL+Sbje1SbILQp1jNHezdYejI7n4hMhVLoLwHcY7znMh08J/naKpiQAuU/ES9il/vx5exmuou/TdGSawB9QQlkJqTlqm776OnutiflYsDAzOYFBhSGupt7g+Nt7NptDcCgvG2VWgofIgrUTuvL8HgPM+JbIIzBkDnonek6ofKMV4ekaidny6OO+lU7RHy1TkUl8KmG1uRSLqccFBMpmjns8u5weEg2j6XrtRFUhDviqGBoisDsS6HAcvVTJOq3k/2iG6eyN9tFbw6fg==',
     sportSort: '[1,2,3,4,20,5,23,10000001,10000002,10000005,31]',
     source: 0,
     leagueIds: [],
@@ -77,6 +74,20 @@ const accountLogout = () => {
   userStore.logout();
 };
 const getMemberId = computed(() => userStore.memberId);
+
+const pushArr = ref([1, 2, 3]);
+const pushTest = () => {
+  pushArr.value.push(4);
+};
+watch(pushArr.value, (newVal, oldVal) => {
+  console.log('newVal', newVal, 'oldVal', oldVal, isRef(pushArr));
+});
+onMounted(() => {
+  console.log('onMounted', userStore.memberId);
+  if (userStore.memberId) {
+    console.log('onMounted', userStore.memberId);
+  }
+})
 </script>
 
 <template>
@@ -90,18 +101,20 @@ const getMemberId = computed(() => userStore.memberId);
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <!-- <el-switch
+  <el-switch
     v-model="isDark"
     inline-prompt
     active-text="dark"
     size="large"
     inactive-text="light"
     @change="toggleDark(isDark)"
-  /> -->
+  />
   <button @click="themeChange">{{ theme }}</button>
-{{ userStore }}
   <button @click="accountLogin($event)">{{ getMemberId }}账户登录测试</button>
   <button v-if="userStore.memberId" @click="accountLogout">退出</button>
+  <br />
+  {{ pushArr }}
+  <el-button @click="pushTest">push ceshi</el-button>
 </template>
 
 <style scoped>

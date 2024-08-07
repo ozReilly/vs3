@@ -5,16 +5,16 @@
 import { defineStore } from 'pinia';
 
 export interface BaseConfig {
-  app_socket: string;
-  themes: string;
-  control_switch: number[];
-  languages: Language[];
-  static_domain: string;
-  match_socket: string;
+  app_socket: string | undefined;
+  themes: string | undefined;
+  control_switch: number[] | undefined;
+  languages: Language[] | undefined;
+  static_domain: string | undefined;
+  match_socket: string | undefined;
   system_maintenance: number;
-  api_domain: string;
-  isn_maintain: boolean;
-  inner_static_domain: string;
+  api_domain: string | undefined;
+  isn_maintain: boolean | undefined;
+  inner_static_domain: string | undefined;
 }
 
 export interface Language {

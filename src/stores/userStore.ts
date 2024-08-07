@@ -2,7 +2,9 @@
  * 这是用户基本信息模块逻辑
  * 通过pinia定义一个store为user的全局对象
  */
-import { defineStore } from 'pinia';
+import HttpClient from '@/utils/axios';
+// import { defineStore } from 'pinia';
+
 // 定义一个用户对象接口来规范数据对象
 export interface UserInfo {
   memberId: number;
@@ -110,7 +112,7 @@ export const useUserStore = defineStore('user',{
     async fetchUserData(userId: number) {
       try {
         // 发起网络请求获取用户数据
-        const response = await axios.get(`/api/users/${userId}`);
+        const response = await HttpClient.get(`/api/users/${userId}`);
         // 更新 state
         this.$patch(response.data);
       } catch (error) {
