@@ -11,7 +11,7 @@ pnpm install vue-router vue-i18n pinia pinia-plugin-persistedstate axios
 
  2. 添加vue-router
 ```bash
-npm install vue-router@4
+pnpm install vue-router
 ```
 
  3. 添加pinia

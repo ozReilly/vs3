@@ -2,9 +2,9 @@
   <div class="app">
     <!-- <router-view></router-view> -->
      <nav class="nav">
-      <router-link to="/">首页</router-link>
-      <router-link to="/list">list</router-link>
-      <router-link to="/login">login</router-link>
+      <router-link to="/">{{ $t('nav.home') }}</router-link>
+      <router-link to="/list">{{$t('nav.list')}}</router-link>
+      <router-link to="/login">{{ $t('nav.login') }}</router-link>
      </nav>
     <router-view v-slot="{ Component }">
       <Transition name="fade" mode="out-in">
