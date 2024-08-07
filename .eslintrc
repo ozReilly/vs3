@@ -18,7 +18,8 @@
     "vue-global-api/computed", 
     "vue-global-api/onMounted",
     "vue-global-api/onUnMounted",
-    "axios"
+    "axios",
+    "vue-router"
 
   ],
   "parserOptions": {

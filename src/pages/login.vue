@@ -1,5 +1,6 @@
 <template>
   <h1>login</h1>
+  <el-button @click="router.push('/')">返回</el-button>
   <el-form>
     <el-form-item label="用户名" prop="username">
       <el-input v-model="formData.username"></el-input>
@@ -11,9 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import { ElForm, ElFormItem, ElInput } from 'element-plus';
 import { ref } from 'vue';
-
+const router = useRouter()
 const formData = ref({
   username: '',
   password: '',

@@ -2,7 +2,7 @@
   <div class="h5">
     <VanLoading />
     <VanButton type="primary">主要按钮</VanButton>
-    <!-- <router-view /> -->
+    <router-view />
   </div>
 </template>
 
