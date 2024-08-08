@@ -33,3 +33,16 @@ vscode中 settings.json 添加
 ```bash
 pnpm install -D sass
 ```
+### 5 配置UI库 element-plus,vant
+```bash
+pnpm install element-plus vant
+```
+<!-- # 6 配置vite-plugin-svg-icons
+```bash
+pnpm install vite-plugin-svg-icons -D
+```
+# 7 配置vite-plugin-mock
+```bash
+pnpm install vite-plugin-mock -D
+```
+# 8 配置vite-plugin-style-import -->
