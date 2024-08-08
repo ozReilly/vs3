@@ -6,7 +6,6 @@
 // export default pinia
 
 // 全局持久化配置
-import { createPinia } from 'pinia';
 import { createPersistedState } from 'pinia-plugin-persistedstate';
 
 const pinia = createPinia();

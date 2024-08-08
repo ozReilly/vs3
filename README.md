@@ -37,7 +37,7 @@ pnpm install -D sass
 ```bash
 pnpm install element-plus vant
 ```
- # 6 配置按需引入插件
+### 6 配置按需引入插件[(https://www.jianshu.com/p/2fdb75834cef)]
 ```bash
 pnpm install unplugin-vue-components unplugin-auto-import -D
 ```
@@ -73,8 +73,15 @@ pnpm install unplugin-vue-components unplugin-auto-import -D
         './.eslintrc-auto-import.json',
     ],
 ```
-# 7 配置vite-plugin-mock
+
+### 7 配置环境变量
+ 7.1 新建 .env.staging（预发布环境配置）.env.development（开发环境配置） .env.production（生产环境配置）
+ 7.2 import.meta.env.VITE_BASE_URL 获取环境变量
+ 7.3 在vite.config.ts中使用环境变量（loadEnv）
+ 7.4 在package.json中配置环境变量 staging pro
+
+### 8 配置vite-plugin-mock
 ```bash
 pnpm install vite-plugin-mock -D
 ```
-# 8 配置vite-plugin-style-import -->
+

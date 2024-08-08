@@ -11,7 +11,6 @@
 
 <script setup lang="ts">
 console.log('detail.vue')
-import { storeToRefs } from 'pinia'
 import { useUserStore } from '../stores/userStore'
 const userStore = useUserStore()
 const { userInfo, token, vipName } = storeToRefs(userStore)

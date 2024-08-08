@@ -5,11 +5,11 @@ import router from '@/router';
 import i18n from '@/i18n';
 import pinia from '@/stores';
 
-// import elementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 
-// import vant from 'vant';
 import 'vant/lib/index.css';
 
 console.log('enter main.ts');
+console.log('config:',import.meta.env.VITE_API_URL)
+
 createApp(App).use(pinia).use(router).use(i18n).mount('#app');
