@@ -9,17 +9,4 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 pnpm install vue-router vue-i18n pinia pinia-plugin-persistedstate axios
 ```
 
- 2. 添加vue-router
-```bash
-pnpm install vue-router
-```
-
- 3. 添加pinia
-```bash
-npm install pinia
-```
-
- 4. 添加axios
-```bash
-npm install axios
-```
+## 2. 配置tsconfig、路径别名
