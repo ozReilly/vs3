@@ -10,3 +10,22 @@ pnpm install vue-router vue-i18n pinia pinia-plugin-persistedstate axios
 ```
 
 ## 2. 配置tsconfig、路径别名
+
+```bash
+pnpm add @types/node -D
+```
+## 3. 配置ESlint 和 prettier
+ ### 3.1 老是配置写法
+  ```bash
+  pnpm install -D eslint@^8.39.0 @typescript-eslint/parser@^6.19.0 @typescript-eslint/eslint-plugin@^6.19.0 eslint-plugin-vue@^9.11.0 eslint-plugin-prettier@^5.1.3 eslint-config-prettier@^9.1.0
+  ```
+  # 3.2 新写法
+  ```bash
+  pnpm install -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-vue eslint-plugin-prettier eslint-config-prettier
+  ```
+vscode中 settings.json 添加
+```bash
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+  ```

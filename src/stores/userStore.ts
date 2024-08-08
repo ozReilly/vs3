@@ -1,19 +1,18 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 // defineStore 第一个参数是id，必需且值唯一
 export interface IUserInfo {
-  name: string
-  age: number
+  name: string;
+  age: number;
 }
 export interface IUserState {
-  token: string
-  userInfo: IUserInfo
+  token: string;
+  userInfo: IUserInfo;
 }
-
 type UserState = {
-  userInfo: IUserInfo
-  token: string
-}
+  userInfo: IUserInfo;
+  token: string;
+};
 
 export const useUserStore = defineStore('user', {
   state: (): UserState => ({
@@ -30,26 +29,27 @@ export const useUserStore = defineStore('user', {
   actions: {
     //更新整个对象
     updateUserInfo(userInfo: IUserInfo) {
-      this.userInfo = userInfo
+      this.userInfo = userInfo;
     },
     //更新对象中某个属性
     updateAge(age: number) {
-      this.userInfo.age = age
+      this.userInfo.age = age;
     },
     //更新基础数据类型
     updateToken(token: IUserState['token']) {
-      this.token = token
+      this.token = token;
     },
   },
-  persist:{
-    storage:localStorage,
+
+  persist: {
+    storage: localStorage,
     beforeRestore: (ctx) => {
-      console.log(`即将恢复 '${ctx.store.$id}'`)
-      console.log(ctx.store.$state)
+      console.log(`即将恢复 '${ctx.store.$id}'`);
+      console.log(ctx.store.$state);
     },
     afterRestore: (ctx) => {
-      console.log(`刚刚恢复完 '${ctx.store.$id}'`)
+      console.log(`刚刚恢复完 '${ctx.store.$id}'`);
     },
     // paths:['userInfo']
-  }
-})
+  },
+});

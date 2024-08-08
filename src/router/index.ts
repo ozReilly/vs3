@@ -15,11 +15,12 @@ const routes = [
     path: '/detail/:id',
     name: 'Detail',
     component: () => import('@/views/Detail.vue'),
-  },{
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('@/views/Login.vue'),
-  }
+  },
 ]
 
 const router = createRouter({

@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     login
-    <input type="text">
+    <input type="text" />
   </div>
 </template>
 
@@ -9,6 +9,4 @@
 console.log('login.vue')
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

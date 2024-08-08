@@ -14,6 +14,6 @@ const pinia = createPinia()
 pinia.use(
   createPersistedState({
     storage: sessionStorage,
-  })
+  }),
 )
 export default pinia
