@@ -29,3 +29,7 @@ vscode中 settings.json 添加
     "source.fixAll.eslint": "explicit"
   }
   ```
+### 4 配置scss
+```bash
+pnpm install -D sass
+```

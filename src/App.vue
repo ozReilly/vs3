@@ -17,13 +17,15 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
+<style lang="scss" scoped>
 .nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 50px;
-  color: #fff;
   column-gap: 5px;
+  a {
+    color: $test-color;
+  }
 }
 </style>

@@ -8,5 +8,12 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname,'./src')
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/assets/scss/variable.scss";`
+      }
+    }
   }
 })
