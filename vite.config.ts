@@ -13,7 +13,7 @@ const confg = defineConfig({
     vue(),
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia', 'vue-i18n'],
-      dts: 'src/typing/auto-imports.d.ts',
+      dts: 'typing/auto-imports.d.ts',
       resolvers: [ElementPlusResolver(), VantResolver()],
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
@@ -30,7 +30,7 @@ const confg = defineConfig({
       },
     }),
     Components({
-      dts: 'src/typing/components-imports.d.ts',
+      dts: 'typing/components-imports.d.ts',
       resolvers: [ElementPlusResolver(), VantResolver()],
     }),
   ],

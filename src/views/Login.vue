@@ -2,11 +2,7 @@
   <div class="login">
     login
     <ElForm ref="ruleFormRef" :model="formData" @submit="onSubmit">
-      <ElFormItem
-        label="用户名"
-        prop="username"
-        :rules="[{ trigger: 'blur', required: true, message: '请填写用户名' }]"
-      >
+      <ElFormItem label="用户名" prop="username" :rules="[{ trigger: 'blur', required: true, message: '请填写用户名' }]">
         <ElInput v-model="formData.username" placeholder="请输入用户名" autocomplete="off" />
       </ElFormItem>
       <el-form-item label="密码" prop="password" :rules="[{ trigger: 'blur', required: true, message: '请填写密码' }]">
@@ -19,14 +15,7 @@
     </ElForm>
     <van-form @submit="onSubmit">
       <van-cell-group inset>
-        <van-field
-          v-model="formData.username"
-          autocomplete="off"
-          name="用户名"
-          label="用户名"
-          placeholder="用户名"
-          :rules="[{ required: true, message: '请填写用户名' }]"
-        />
+        <van-field v-model="formData.username" autocomplete="off" name="用户名" label="用户名" placeholder="用户名" :rules="[{ required: true, message: '请填写用户名' }]" />
         <van-field
           v-model="formData.password"
           autocomplete="off"

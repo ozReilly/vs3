@@ -10,6 +10,7 @@ import 'element-plus/dist/index.css';
 import 'vant/lib/index.css';
 
 console.log('enter main.ts');
-console.log('config:',import.meta.env.VITE_API_URL)
+
+console.log('config:', import.meta.env.VITE_API_URL);
 
 createApp(App).use(pinia).use(router).use(i18n).mount('#app');
