@@ -37,9 +37,41 @@ pnpm install -D sass
 ```bash
 pnpm install element-plus vant
 ```
-<!-- # 6 配置vite-plugin-svg-icons
+ # 6 配置按需引入插件
 ```bash
-pnpm install vite-plugin-svg-icons -D
+pnpm install unplugin-vue-components unplugin-auto-import -D
+```
+```json
+        AutoImport({
+            // 可以自定义文件生成的位置，默认是根目录下，使用ts的建议放src目录下
+            imports: ['vue', 'vue-router'],
+            resolvers: [ElementPlusResolver(),VantResolver()],
+            dts: 'src/auto-import.d.ts', // 路径下自动生成文件夹存放全局指令
+            include: [
+                /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+                /\.vue$/, /\.vue\?vue/, // .vue
+                /\.md$/, // .md
+            ],
+            // 解决eslint报错问题
+            eslintrc: {
+                // 这里先设置成true然后npm run dev 运行之后会生成 .eslintrc-auto-import.json 文件之后，在改为false
+                enabled: false,
+                filepath: './.eslintrc-auto-import.json', // 生成的文件路径
+                globalsPropValue: true,
+            }
+        })
+```
+```json
+    extends: [
+        'airbnb-base',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:import/recommended',
+        'plugin:import/typescript',
+        'plugin:vue/vue3-recommended',
+        'plugin:prettier/recommended',
+        // 添加下列这行
+        './.eslintrc-auto-import.json',
+    ],
 ```
 # 7 配置vite-plugin-mock
 ```bash

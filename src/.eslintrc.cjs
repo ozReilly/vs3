@@ -11,6 +11,8 @@ module.exports = {
     "plugin:@typescript-eslint/recommended", //继承 TypeScript ESLint 插件的推荐规则
     "plugin:prettier/recommended", //继承 Prettier 的推荐规则
     "eslint-config-prettier", //关闭 ESLint 中与 Prettier 冲突的规则
+    "./.eslintrc-auto-import.json", // 自动导入
+    // "./.eslintrc-auto-import-ts.json", // 自动导入
   ],
   parserOptions: {
     ecmaVersion: "latest",

@@ -45,10 +45,9 @@
 </template>
 
 <script setup lang="ts">
-console.log('login.vue');
+import { FormInstance } from 'element-plus';
 
-import { ElButton, FormInstance } from 'element-plus';
-import { reactive, ref } from 'vue';
+console.log('login.vue');
 
 const formData = reactive({
   username: '',
