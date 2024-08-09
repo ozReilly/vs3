@@ -80,7 +80,12 @@ pnpm install unplugin-vue-components unplugin-auto-import -D
  7.3 在vite.config.ts中使用环境变量（loadEnv）
  7.4 在package.json中配置环境变量 staging pro
 
-### 8 配置vite-plugin-mock
+### 8 配置axios(useFetch)
+```bash
+pnpm install axios
+```
+
+### 9 配置vite-plugin-mock
 ```bash
 pnpm install vite-plugin-mock -D
 ```

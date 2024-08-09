@@ -46,6 +46,17 @@ const confg = defineConfig({
       },
     },
   },
+  // server: {
+  //   port: 3000,
+  //   open: true,
+  //   proxy: {
+  //     '/api': {
+  //       target: 'https//bmabcd.api.com',
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/api/, ''),
+  //     },
+  //   },
+  // },
 })
 
 export default defineConfig(({ command, mode }) => {
