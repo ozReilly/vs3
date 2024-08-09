@@ -84,8 +84,34 @@ pnpm install unplugin-vue-components unplugin-auto-import -D
 ```bash
 pnpm install axios
 ```
+### 9 配置打包
+```json old
+  // 旧的打包方式
+  build: {
+    outDir: 'dist2',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        keep_infinity: true,
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    chunkSizeWarningLimit: 1500,
 
-### 9 配置vite-plugin-mock
+  },
+```
+```json new
+  // 新的打包方式
+  build: {
+    outDir: 'esdist2',
+    chunkSizeWarningLimit: 1500,
+  },
+  esbuild: {
+    drop:['console','debugger']
+  },
+```
+### 10 配置vite-plugin-mock
 ```bash
 pnpm install vite-plugin-mock -D
 ```
