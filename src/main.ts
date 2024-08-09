@@ -5,9 +5,9 @@ import router from '@/router';
 import i18n from '@/i18n';
 import pinia from '@/stores';
 
-import 'element-plus/dist/index.css';
+// import 'element-plus/dist/index.css';
 
-import 'vant/lib/index.css';
+// import 'vant/lib/index.css';
 
 console.log('enter main.ts');
 
