@@ -1,35 +1,39 @@
 <template>
   <div class="login">
     login {{ isH5 }}
-    <ElForm ref="ruleFormRef" :model="formData" @submit="onSubmit">
-      <ElFormItem label="用户名" prop="username" :rules="[{ trigger: 'blur', required: true, message: '请填写用户名' }]">
-        <ElInput v-model="formData.username" placeholder="请输入用户名" autocomplete="off" />
-      </ElFormItem>
-      <el-form-item label="密码" prop="password" :rules="[{ trigger: 'blur', required: true, message: '请填写密码' }]">
-        <ElInput v-model="formData.password" placeholder="请输入密码" type="password" autocomplete="off" />
-      </el-form-item>
-      <ElFormItem>
-        <!-- <ElButton round block type="primary" native-type="submit" > 提交 </ElButton> -->
-        <ElButton round block type="primary" @click="submitForm(ruleFormRef)"> 提交 </ElButton>
-      </ElFormItem>
-    </ElForm>
-    <van-form @submit="onSubmit">
-      <van-cell-group inset>
-        <van-field v-model="formData.username" autocomplete="off" name="用户名" label="用户名" placeholder="用户名" :rules="[{ required: true, message: '请填写用户名' }]" />
-        <van-field
-          v-model="formData.password"
-          autocomplete="off"
-          type="password"
-          name="密码"
-          label="密码"
-          placeholder="密码"
-          :rules="[{ required: true, message: '请填写密码' }]"
-        />
-      </van-cell-group>
-      <div style="margin: 16px">
-        <van-button round block type="primary" native-type="submit"> 提交 </van-button>
-      </div>
-    </van-form>
+    <template v-if="isH5">
+      <van-form @submit="onSubmit">
+        <van-cell-group inset>
+          <van-field v-model="formData.username" autocomplete="off" name="用户名" label="用户名" placeholder="用户名" :rules="[{ required: true, message: '请填写用户名' }]" />
+          <van-field
+            v-model="formData.password"
+            autocomplete="off"
+            type="password"
+            name="密码"
+            label="密码"
+            placeholder="密码"
+            :rules="[{ required: true, message: '请填写密码' }]"
+          />
+        </van-cell-group>
+        <div style="margin: 16px">
+          <van-button round block type="primary" native-type="submit"> 提交 </van-button>
+        </div>
+      </van-form>
+    </template>
+    <template v-else>
+      <ElForm ref="ruleFormRef" :model="formData" @submit="onSubmit">
+        <ElFormItem label="用户名" prop="username" :rules="[{ trigger: 'blur', required: true, message: '请填写用户名' }]">
+          <ElInput v-model="formData.username" placeholder="请输入用户名" autocomplete="off" />
+        </ElFormItem>
+        <el-form-item label="密码" prop="password" :rules="[{ trigger: 'blur', required: true, message: '请填写密码' }]">
+          <ElInput v-model="formData.password" placeholder="请输入密码" type="password" autocomplete="off" />
+        </el-form-item>
+        <ElFormItem>
+          <!-- <ElButton round block type="primary" native-type="submit" > 提交 </ElButton> -->
+          <ElButton round block type="primary" @click="submitForm(ruleFormRef)"> 提交 </ElButton>
+        </ElFormItem>
+      </ElForm>
+    </template>
   </div>
 </template>
 
