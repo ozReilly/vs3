@@ -1,27 +1,27 @@
-import { defineConfig, loadEnv } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+import { defineConfig, loadEnv } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { resolve } from 'path';
 
 //配置按需加载
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver, VantResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver, VantResolver } from 'unplugin-vue-components/resolvers';
 
 // // 配置gz插件
 // import viteCompression from 'vite-plugin-compression'
 // 配置分析生成包大小
-import { visualizer } from 'rollup-plugin-visualizer'
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vitejs.dev/config/
 
-type Mode = 'development' | 'production' | 'staging'
+type Mode = 'development' | 'production' | 'staging';
 
 export default defineConfig(({ command, mode }) => {
-  const env = loadEnv(mode, process.cwd())
+  const env = loadEnv(mode, process.cwd());
   // import.meta.env = env // 赋值给环境变量
-  let environmentMode: Mode = mode as Mode
-  console.log('import.meta.env', env, environmentMode)
-  console.log(`··············evn-config:%c${command}, ${mode}, ${env.VITE_API_URL}················`, 'color:red;font-size:13px;')
+  let environmentMode: Mode = mode as Mode;
+  console.log('import.meta.env', env, environmentMode);
+  console.log(`··············evn-config:%c${command}, ${mode}, ${env.VITE_API_URL}················`, 'color:red;font-size:13px;');
   // 这里可以做各种环境配置
   return defineConfig({
     plugins: [
@@ -99,5 +99,5 @@ export default defineConfig(({ command, mode }) => {
     esbuild: {
       drop: environmentMode === 'production' ? ['console', 'debugger'] : [],
     },
-  })
-})
+  });
+});
