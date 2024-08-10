@@ -3,7 +3,7 @@ import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 /**
  * 创建一个axios实例
  */
-console.log('axioosss-',import.meta.env.VITE_BASE_URL)
+console.log('axioosss-', import.meta.env.VITE_BASE_URL);
 const HttpClient = axios.create({
   // baseURL: 'https://api.bmabcd.com/',
   timeout: 60000,
@@ -20,7 +20,7 @@ HttpClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     // const token = localStorage.getItem('token');
     // config.headers.Authorization = token ? `Bearer ${token}` : '';
-    console.log('request---cfg', config)
+    console.log('request---cfg', config);
     return config;
   },
   (error) => {
@@ -35,7 +35,7 @@ HttpClient.interceptors.request.use(
  * 功能：处理接口异常比如（500,403,402,401）等权限问题
  */
 HttpClient.interceptors.response.use(
-  (config:AxiosResponse) => {
+  (config: AxiosResponse) => {
     // 这里可以做一些响应拦截处理 403,401,500
     return config;
   },

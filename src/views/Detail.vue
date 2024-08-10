@@ -10,20 +10,20 @@
 </template>
 
 <script setup lang="ts">
-console.log('detail.vue')
-import { useUserStore } from '../stores/userStore'
-const userStore = useUserStore()
-const { userInfo, token, vipName } = storeToRefs(userStore)
-const { updateUserInfo, updateAge } = userStore
+console.log('detail.vue');
+import { useUserStore } from '../stores/userStore';
+const userStore = useUserStore();
+const { userInfo, token, vipName } = storeToRefs(userStore);
+const { updateUserInfo, updateAge } = userStore;
 const handleUser = () => {
   updateUserInfo({
     name: '小明',
     age: 18,
-  })
-}
+  });
+};
 const handleAge = () => {
-  updateAge(22)
-}
+  updateAge(22);
+};
 </script>
 
 <style scoped></style>

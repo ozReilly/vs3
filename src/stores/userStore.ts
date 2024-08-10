@@ -1,4 +1,3 @@
-
 // defineStore 第一个参数是id，必需且值唯一
 export interface IUserInfo {
   name: string;

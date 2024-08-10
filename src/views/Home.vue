@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-console.log('home.vue')
+console.log('home.vue');
 </script>
 
 <style scoped></style>
