@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    login
+    login {{ isH5 }}
     <ElForm ref="ruleFormRef" :model="formData" @submit="onSubmit">
       <ElFormItem label="用户名" prop="username" :rules="[{ trigger: 'blur', required: true, message: '请填写用户名' }]">
         <ElInput v-model="formData.username" placeholder="请输入用户名" autocomplete="off" />
@@ -35,6 +35,7 @@
 
 <script setup lang="ts">
 import { FormInstance } from 'element-plus';
+const isH5 = inject('isH5');
 
 console.log('login.vue');
 

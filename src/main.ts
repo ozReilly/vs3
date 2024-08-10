@@ -1,9 +1,9 @@
-import { createApp } from 'vue';
 import '@/style.css';
 import App from '@/App.vue';
 import router from '@/router';
 import i18n from '@/i18n';
 import pinia from '@/stores';
+import { isH5 } from './utils/tools';
 
 // import 'element-plus/dist/index.css';
 
@@ -12,5 +12,4 @@ import pinia from '@/stores';
 console.log('enter main.ts');
 
 console.log('config:', import.meta.env);
-
-createApp(App).use(pinia).use(router).use(i18n).mount('#app');
+createApp(App).use(pinia).use(router).use(i18n).provide('isH5', isH5()).mount('#app');

@@ -6,7 +6,7 @@
     <li v-for="item in listData" :key="item.id"></li>
   </ul> -->
     <ul class="item-wrapper">
-      <li v-cloak="gameListData">
+      <li>
         {{ gameListData }}
       </li>
     </ul>
