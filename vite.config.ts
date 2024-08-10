@@ -20,7 +20,7 @@ export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd())
   // import.meta.env = env // 赋值给环境变量
   let environmentMode: Mode = mode as Mode
-  console.log('import.meta.env', env,environmentMode)
+  console.log('import.meta.env', env, environmentMode)
   console.log(`··············evn-config:%c${command}, ${mode}, ${env.VITE_API_URL}················`, 'color:red;font-size:13px;')
   // 这里可以做各种环境配置
   return defineConfig({

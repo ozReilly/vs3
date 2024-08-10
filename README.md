@@ -26,8 +26,9 @@ pnpm add @types/node -D
 vscode中 settings.json 添加
 ```bash
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  }
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true
   ```
 ### 4 配置scss
 ```bash
@@ -116,3 +117,19 @@ pnpm install axios
 pnpm install vite-plugin-mock -D
 ```
 
+### 11 配置测试工具jest之类 
+
+
+### 12 Git 提交规范
+
+配置 husky、lint-staged、@commitlint/cli
+  - husky：一个为git客户端增加hook的工具
+  - lint-staged：仅对Git 代码暂存区文件进行处理，配合husky使用
+  - @commitlint/cli：让commit信息规范化
+
+  ```bash
+  pnpm install husky@9.1.3 -D 
+  pnpm install lint-staged@^15.2.7 -D
+  pnpm install @commitlint/cli@^19.3.0 -D
+  pnpm install @commitlint/config-conventional@^19.2.2 -D
+```
