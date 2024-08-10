@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="login" :class="[{ h5: isH5 }]">
     login {{ isH5 }}
     <Suspense>
       <template #default>

@@ -1,20 +1,21 @@
 export interface baseParams {
-  token: string;
-  uid: number;
-  deviceID: string;
-  pid: number;
-  versionCode: number;
-  versionName: string;
-  os: string;
-  osVersionName: string;
-  osVersionCode: number;
-  mac: string;
-  deviceModel: string;
-  channel: string;
-  realm: string;
-  siteNo: number;
-  process: string;
+  token: string | undefined;
+  uid: number | undefined;
+  pid: number | undefined;
+  versionCode: number | undefined;
+  versionName: string | undefined;
+  os: string | undefined;
+  osVersionName: string | undefined;
+  osVersionCode: number | undefined;
+  mac: string | undefined;
+  deviceModel: string | undefined;
+  realm: string | undefined;
+  siteNo: number | undefined;
+  process: string | undefined;
+  deviceID?: string | undefined;
+  channel?: string | undefined;
 }
+
 export interface gameListParams extends baseParams {
   lang: string;
   page: number;
@@ -75,6 +76,7 @@ export interface ICountMap {
   '20': number;
   '31': number;
 }
+
 export interface IGameDataM {
   h1: number;
   a1: number;
@@ -148,6 +150,7 @@ export interface IGameRecord {
   gl: number;
   matchId: number;
 }
+
 interface IMoDataItem {
   md: number;
   oi: string;
@@ -163,22 +166,26 @@ interface IMoDataItem {
   db: number;
   ct: number;
 }
+
 interface IMoDataCategory {
   k: string;
   a: string;
   n: string;
   o: IMoDataItem[];
 }
+
 interface IGameDataMoData {
   [key: string]: {
     [key: string]: IMoDataCategory;
   };
 }
+
 export interface IGameDataMo {
   z: IGameDataMoData;
   mc: number;
   tmc: boolean;
 }
+
 interface Market {
   M: string[];
   S: {
@@ -190,6 +197,7 @@ interface Market {
     [key: string]: string;
   };
 }
+
 interface IGameDataN {
   a: string; // 模拟现实联盟
   b: string; // Dutch Eredivisie SRL
