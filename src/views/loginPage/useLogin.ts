@@ -37,4 +37,5 @@ function useLogin() {
     ruleFormRef,
   } as unknown as useLoginResult<typeof formData>;
 }
+
 export default useLogin;
