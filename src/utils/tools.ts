@@ -11,3 +11,16 @@ export const isH5 = () => {
   // 检测是否是移动设备且支持 H5 特性
   return (isMobile || isIpad) && supportsTouch;
 };
+
+export const FixUrl = (url: string) => {
+  if (import.meta.env.VITE_MODE === 'development') {
+    return `https://${url}.bmabcd.com`;
+  }
+  if (url.startsWith('//')) {
+    return `https:${url}`;
+  }
+  if (url.startsWith('/')) {
+    return `${import.meta.env.VITE_API_URL}${url}`;
+  }
+  return url;
+};

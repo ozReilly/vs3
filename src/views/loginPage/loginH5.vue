@@ -15,22 +15,24 @@
         <van-field v-model="formData.code" center clearable label="短信验证码" placeholder="请输入短信验证码" :rules="[{ required: true, message: '请填写短信验证码' }]">
           <template #button>
             <van-button size="small" type="primary" @click="sendCode">
-              <img v-if="formData.imgCode" style="max-width: 80px; height: 30px" :src="formData.imgCode" alt="imgcode" />
+              <img v-if="formData.imgCode" style="max-width: 80px; height: 30px; display: block; margin: 0 -10px; border-radius: 2px" :src="formData.imgCode" alt="imgcode" />
               <span v-else>发送验证码</span>
             </van-button>
           </template>
         </van-field>
       </van-cell-group>
-      <div style="margin: 16px">
+      <!-- <div style="margin: 16px"> -->
+      <van-cell-group inset>
         <van-button round block type="primary" native-type="submit"> 提交</van-button>
-      </div>
+      </van-cell-group>
+      <!-- </div> -->
     </van-form>
   </div>
 </template>
 
 <script setup lang="ts">
 import useLogin from './useLogin';
-
+console.log('loginH5.vue');
 const { onSubmit, formData, sendCode } = useLogin();
 </script>
 

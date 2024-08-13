@@ -14,6 +14,7 @@
     "build:pro": "vue-tsc -b && vite build --mode production"
   },
   "dependencies": {
+    "@fingerprintjs/fingerprintjs": "^4.4.3",
     "axios": "^1.7.3",
     "element-plus": "^2.7.8",
     "pinia": "^2.2.1",

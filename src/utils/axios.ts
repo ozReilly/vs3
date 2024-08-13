@@ -1,11 +1,12 @@
-import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import userBaseCfgStore from '@/stores/useBaseCfg';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 /**
  * 创建一个axios实例
  */
-console.log('axioosss-', import.meta.env.VITE_BASE_URL);
-const HttpClient = axios.create({
-  // baseURL: 'https://api.bmabcd.com/',
+const baseUrl = import.meta.env.VITE_API_URL;
+console.log('axioosss-', baseUrl);
+const HttpClient: AxiosInstance = axios.create({
   timeout: 60000,
   headers: {
     // 'Content-Type': 'application/json;charset=UTF-8',
@@ -21,7 +22,9 @@ HttpClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     // const token = localStorage.getItem('token');
     // config.headers.Authorization = token ? `Bearer ${token}` : '';
-    console.log('request---cfg', config);
+    const baseCfg = userBaseCfgStore();
+    config.baseURL = baseCfg.appCfg.api_domain;
+    console.log('request---cfg', baseCfg.appCfg.api_domain, config);
     return config;
   },
   (error) => {

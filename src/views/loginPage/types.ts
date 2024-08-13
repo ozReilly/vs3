@@ -7,4 +7,5 @@ export interface useLoginResult<TData> {
   submitForm: (formEl: FormInstance | undefined) => Promise<void>;
   ruleFormRef: Ref<FormInstance>;
   isH5: boolean;
+  sendCode: (formEl: FormInstance | undefined) => Promise<void>;
 }

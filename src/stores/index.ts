@@ -15,4 +15,5 @@ pinia.use(
     storage: sessionStorage,
   }),
 );
+
 export default pinia;
